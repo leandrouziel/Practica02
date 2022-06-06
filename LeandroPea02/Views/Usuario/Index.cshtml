@@ -1,0 +1,29 @@
+﻿@model  IEnumerable<LeandroPea02.Models.UsuarioEntity>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de usuarios</h2>
+<table class="table table-hover">
+    <thead>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Usuario</th>
+        <th>Estado</th>
+        <th>Observaciones</th>
+     </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(item.Nombres, "Editar", new { id = item.IdUsuario })</td>
+                <td>@item.Apellidos</td>
+                <td>@item.Usuario</td>
+                <td>@item.Estado</td>
+                <td>@item.Observacion</td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Nuevo cliente", "crear", "Cliente", new { @class = "btn btn-primary" })
+

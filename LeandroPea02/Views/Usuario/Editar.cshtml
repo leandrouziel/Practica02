@@ -1,0 +1,47 @@
+﻿@model LeandroPea02.Models.UsuarioEntity 
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar usuario</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => Model.IdUsuario)
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Nombres)
+        @Html.EditorFor(model => Model.Nombres, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Apellidos)
+        @Html.EditorFor(model => Model.Apellidos, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Usuario)
+        @Html.EditorFor(model => Model.Usuario, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Clave)
+        @Html.EditorFor(model => Model.Clave, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Estado)
+        @Html.EditorFor(model => Model.Estado, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => Model.Observacion)
+        @Html.EditorFor(model => Model.Observacion, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Actualizar" class="btn btn-primary"/>
+    </div>
+
+    @Html.ActionLink("Eliminar usuraio", "Eliminar", new { id = Model.IdUsuario }, new { @class = "btn btn-primary" })
+}
+
